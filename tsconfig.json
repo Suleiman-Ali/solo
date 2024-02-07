@@ -1,0 +1,12 @@
+{
+  "extends": "astro/tsconfigs/strict",
+  "exclude": ["/node_modules"],
+  "compilerOptions": {
+    "baseUrl": "C:/Users/sulei/Desktop/solo",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "jsx": "preserve",
+    "jsxImportSource": "solid-js"
+  }
+}
