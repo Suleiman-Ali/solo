@@ -1,0 +1,26 @@
+---
+import { getCollection } from "astro:content";
+import SectionBox from "components/bits/home-page/section-box.astro";
+import SectionLink from "components/bits/home-page/section-link.astro";
+import SectionTitle from "components/bits/home-page/section-title.astro";
+
+const blogPosts = (await getCollection("blog")).sort(
+  (a, b) => a.data.sortOrder - b.data.sortOrder
+);
+---
+
+<SectionBox>
+  <SectionTitle>Blog</SectionTitle>
+  <div class="flex flex-col gap-2.5">
+    {
+      blogPosts.map((post) => (
+        <div class="flex items-center justify-between">
+          <SectionLink href={`/blog/${post.slug}`}>
+            {post.data.title}
+          </SectionLink>
+          <p>{post.data.date}</p>
+        </div>
+      ))
+    }
+  </div>
+</SectionBox>

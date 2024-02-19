@@ -1,6 +1,6 @@
 ---
-import Footer from "@/components/bytes/general/footer.astro";
-import Navbar from "@/components/bytes/general/navbar.astro";
+import Footer from "components/bytes/general/footer.astro";
+import Navbar from "components/bytes/general/navbar.astro";
 
 interface Props {
   title?: string;
@@ -14,24 +14,14 @@ const { title = "", description = "" } = Astro.props;
 <html lang="en" class="bg-[#151515]">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
+    <meta name="description" content={description} />
     <title>{title}</title>
   </head>
-  <body class="flex flex-col gap-16 max-w-2xl mx-auto px-3">
+  <body class="flex flex-col gap-[72px] max-w-2xl mx-auto px-3">
     <Navbar />
-    <main class="flex flex-col gap-16">
+    <main class="flex flex-col gap-[72px] gap">
       <slot />
     </main>
     <Footer />
@@ -42,42 +32,20 @@ const { title = "", description = "" } = Astro.props;
   *,
   *::before,
   *::after {
-    font-family:
-      "Noto Sans",
-      system-ui,
-      -apple-system,
-      BlinkMacSystemFont,
-      "Segoe UI",
-      Roboto,
-      Oxygen,
-      Ubuntu,
-      Cantarell,
-      "Open Sans",
-      "Helvetica Neue",
-      sans-serif;
+    /* TODO: DOWNLOAD */
+    font-family: "Segoe UI";
   }
   .mono {
-    font-family:
-      "IBM Plex Mono",
-      system-ui,
-      -apple-system,
-      BlinkMacSystemFont,
-      "Segoe UI",
-      Roboto,
-      Oxygen,
-      Ubuntu,
-      Cantarell,
-      "Open Sans",
-      "Helvetica Neue",
-      sans-serif;
+    /* TODO: DOWNLOAD monospace of Segoe UI */
+    font-family: monospace;
   }
   ::-moz-selection {
     color: currentColor;
-    background: #404040;
+    background: #373737;
   }
   ::selection {
     color: currentColor;
-    background: #404040;
+    background: #373737;
   }
   ::-webkit-scrollbar {
     width: 7px;

@@ -1,122 +1,15 @@
 ---
-import Main from "@/layouts/main.astro";
-
-const projects = [
-  {
-    name: "create-t3-app",
-    description: "The best way to start a Next.js app",
-  },
-  {
-    name: "nexxel.dev",
-    description: "Boring personal site built with Astro",
-  },
-  {
-    name: "license-generator",
-    description: "Create licenses for your projects",
-  },
-  {
-    name: "spotify-voice-control",
-    description: "Voice control for Spotify through the terminal",
-  },
-  {
-    name: "hackernews",
-    description: "Hacker News clone made with SolidStart",
-  },
-  {
-    name: "dots",
-    description: "My dotfiles for MacOS and windows",
-  },
-];
-
-
-const blogPosts = [
-  {
-    name: "Ricing MacOS",
-    date: "Nov 1, 2023",
-  },
-  {
-    name: "How I Organise My Life",
-    date: "Aug 3, 2023",
-  },
-  {
-    name: "Why I Switched From Neovim To VSCode",
-    date: "Jun 23, 2023",
-  },
-  {
-    name: "Everything I Installed on My New Mac",
-    date: "Jun 2, 2023",
-  },
-];
-
+import Main from "layouts/main.astro";
+import Intro from "components/bytes/home-page/intro.astro";
+import Projects from "components/bytes/home-page/projects.astro";
+import Posts from "components/bytes/home-page/posts.astro";
 ---
 
-<!-- TODO: FIX All Design issues -->
-<!-- TODO: REFACTOR, COMMIT -->
-<Main>
-  <section class="text-base leading-loose text-neutral-300">
-    <p>
-      Hello, I'm <span class="text-neutral-100 font-medium">Solo</span>. I like <span
-        class="text-neutral-100 font-medium">building software</span
-      > and
-      <span class="text-neutral-100 font-medium">crafting web solutions</span>.
-      I enjoy<br/><span class="text-neutral-100 font-medium">programming</span>,
-      math, and reading, among other interests.
-    </p>
-    <br />
-    <p>
-      I'm always <span class="text-neutral-100 font-medium">learning</span>, <span
-        class="text-neutral-100 font-medium">building</span
-      >, and <span class="text-neutral-100 font-medium"
-        >living on localhost</span
-      >. See <a
-        href="/projects"
-        class="text-neutral-100 font-medium underline underline-offset-2 decoration-neutral-500 hover:decoration-neutral-400 transition-colors"
-        >projects</a
-      > and <a
-        href="/skills"
-        class="text-neutral-100 font-medium underline underline-offset-2 decoration-neutral-500 hover:decoration-neutral-400 transition-colors"
-        >skills</a
-      >,<br/>read <a
-        href="/blog"
-        class="text-neutral-100 font-medium underline underline-offset-2 decoration-neutral-500 hover:decoration-neutral-400 transition-colors"
-        >blog</a
-      >, retrieve <a href="/" download="solo-resume" class="text-neutral-100 font-medium underline underline-offset-2 decoration-neutral-500 hover:decoration-neutral-400 transition-colors">résumé</a>, and contact via <a
-        href="mailto:suleimanali.business@gmail.com"
-        class="text-neutral-100 font-medium underline underline-offset-2 decoration-neutral-500 hover:decoration-neutral-400 transition-colors"
-        >email</a
-      >.
-    </p>
-  </section>
-
-  <section class="flex flex-col gap-3 text-[15px] leading-loose text-neutral-300">
-    <p class="text-lg font-semibold text-neutral-100">Projects</p>
-   <div class="flex flex-col gap-1.5">
-    <div class="grid grid-cols-3 gap-x-10 gap-y-5">
-      {
-        projects.map((project) => (
-          <div class="flex flex-col gap-1">
-              <a href=`/projects/${project.name}` class="text-neutral-200 font-medium underline underline-offset-2 decoration-neutral-500 hover:decoration-neutral-400 transition-colors">{project.name}</a>
-              <p >{project.description}</p>
-          </div>
-        ))
-      }
-    </div>
-    <a href="/projects" class="text-neutral-200 font-medium underline underline-offset-2 decoration-neutral-500 hover:decoration-neutral-400 transition-colors">All projects →</a>
-   </div>
-  </section>
-
-  <section class="flex flex-col gap-3 text-[15px] leading-loose text-neutral-300">
-    <p class="text-lg font-semibold text-neutral-100">Blog</p>
-    <div class="flex flex-col gap-1.5">
-      {
-        blogPosts.map((post) => (
-          <div class="flex items-center justify-between">
-              <a href=`/projects/${post.name}` class="text-neutral-200 font-medium underline underline-offset-2 decoration-neutral-500 hover:decoration-neutral-400 transition-colors">{post.name}</a>
-              <p >{post.date}</p>
-          </div>
-        ))
-      }
-    <a href="/blog" class="text-neutral-200 font-medium underline underline-offset-2 decoration-neutral-500 hover:decoration-neutral-400 transition-colors">All posts →</a>
-    </div>
-  </section>
+<Main
+  title="Solo • Home"
+  description="Hello, I'm Solo. I like building software and crafting web solutions. I enjoy programming, math, and reading, among other interests. I'm always learning, building, and living on localhost."
+>
+  <Intro />
+  <Projects />
+  <Posts />
 </Main>

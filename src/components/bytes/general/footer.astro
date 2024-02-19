@@ -1,10 +1,23 @@
+---
+import LinkIcon from "components/bits/general/link-icon.astro";
+---
+
 <footer
-  class="text-base font-medium leading-loose text-neutral-500 flex items-center justify-between pb-[30px]"
+  class="text-base font-medium leading-relaxed text-neutral-400 flex items-center justify-between pb-[30px]"
 >
   <a href="/" class="mono">cd ~</a>
-  <div class="flex items-center gap-2.5 text-sm">
-    <a href="/" download="solo-resume">Résumé</a>
-    <a href="https://github.com/Suleiman-Ali">Github</a>
-    <a href="mailto:suleimanali.business@gmail.com">Email</a>
+  <div class="flex items-center gap-2.5">
+    <LinkIcon href="/" target="_blank" title="Résumé" name="resume" />
+    <LinkIcon
+      href="https://github.com/Suleiman-Ali"
+      target="_blank"
+      title="Github"
+      name="github"
+    />
+    <LinkIcon
+      href="mailto:suleimanali.business@gmail.com"
+      title="Email"
+      name="email"
+    />
   </div>
 </footer>

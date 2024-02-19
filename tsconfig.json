@@ -2,7 +2,7 @@
   "extends": "astro/tsconfigs/strict",
   "exclude": ["/node_modules"],
   "compilerOptions": {
-    "baseUrl": "C:/Users/sulei/Desktop/solo",
+    "baseUrl": "src",
     "paths": {
       "@/*": ["src/*"]
     },
